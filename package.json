@@ -1,6 +1,6 @@
 {
-  "name": "react-portal-universal",
-  "version": "0.1.2",
+  "name": "@jesstelford/react-portal-universal",
+  "version": "1.0.0",
   "description": "Wrapper for React's createPortal allowing for rendering portals on the server",
   "main": "index.js",
   "scripts": {
@@ -35,17 +35,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MichalZalecki/react-portal-universal.git"
+    "url": "git+https://github.com/jesstelford/react-portal-universal.git"
   },
-  "author": "Michal Zalecki <michal@michalzalecki.com>",
+  "author": "Jess Telford <hi+npm@jes.st> (https://jes.st)",
   "contributors": [
-    "Jess Telford <hi+npm@jes.st> (https://jes.st)"
+    "Michal Zalecki <michal@michalzalecki.com>"
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MichalZalecki/react-portal-universal/issues"
+    "url": "https://github.com/jesstelford/react-portal-universal/issues"
   },
-  "homepage": "https://github.com/MichalZalecki/react-portal-universal#readme",
+  "homepage": "https://github.com/jesstelford/react-portal-universal#readme",
   "devDependencies": {
     "@types/cheerio": "^0.22.10",
     "@types/jest": "^21.1.10",

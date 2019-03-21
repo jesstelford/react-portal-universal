@@ -4,6 +4,8 @@ React Portals Universal is a library providing a wrapper for React `createPortal
 library is to render portals also on the server. React's DOM `createPortal` requires a DOM node
 which isn't suitable for the NodeJS environment.
 
+_NOTE: This is a fork of [`react-portal-universal`](https://github.com/MichalZalecki/react-portal-universal) which [fixes a critical bug encountered during concurrent renders](https://github.com/MichalZalecki/react-portal-universal/issues/5)._
+
 ## Why?
 
 Thanks to React Portal Universal you can now render portals on the server. But why would I like to do that in the first place? That's a great question!
@@ -15,7 +17,7 @@ Thanks to React Portal Universal you can now render portals on the server. But w
 ## Install
 
 ```commandline
-  npm install react-portal-universal
+  npm install @jesstelford/react-portal-universal
 ```
 
 ## Usage
@@ -24,7 +26,7 @@ Render article's title and meta description into the `<head>`
 
 ```jsx
 // CLIENT
-import { UniversalPortal, prepareClientPortals } from  "react-portal-universal";
+import { UniversalPortal, prepareClientPortals } from  "@jesstelford/react-portal-universal";
 
 const Head = ({ children }) => (
   // pass selector for a document.querySelector
@@ -59,7 +61,7 @@ ReactDOM.render(<App />, document.querySelector("#root"));
 ```js
 // SERVER
 
-const { ServerPortal } = require("react-portal-universal/server");
+const { ServerPortal } = require("@jesstelford/react-portal-universal/server");
 
 const portals  = new ServerPortal();
 const element  = portals.collectPortals(<App />);
@@ -78,10 +80,10 @@ as code responsible for handling rendering on the server. The problem occurs whe
 `ServerPortal` from `node_modules` on the server but use a bundle with its own instance to
 render an application.
 
-The cleanest solution is to mark react-portal-universal as an external dependency in your bundler of choice. Here is how to do this in webpack.
+The cleanest solution is to mark `@jesstelford/react-portal-universal` as an external dependency in your bundler of choice. Here is how to do this in webpack.
 
 ```js
 const config = {
-  externals: ["react-portal-universal"],
+  externals: ["@jesstelford/react-portal-universal"],
 };
 ```

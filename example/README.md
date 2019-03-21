@@ -1,15 +1,15 @@
-# `react-portal-universal` Example
+# `@jesstelford/react-portal-universal` Example
 
 This project shows how to use
-[`react-portal-universal`](https://github.com/MichalZalecki/react-portal-universal)
+[`@jesstelford/react-portal-universal`](https://github.com/jesstelford/react-portal-universal)
 in your server rendered React application.
 
 ## Running it
 
-Setup `react-portal-universal`:
+Setup `@jesstelford/react-portal-universal`:
 
 ```bash
-git clone https://github.com/MichalZalecki/react-portal-universal.git
+git clone https://github.com/jesstelford/react-portal-universal.git
 cd react-portal-universal
 npm install
 ```
