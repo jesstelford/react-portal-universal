@@ -1,6 +1,6 @@
 {
   "name": "@jesstelford/react-portal-universal",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Wrapper for React's createPortal allowing for rendering portals on the server",
   "main": "index.js",
   "scripts": {
