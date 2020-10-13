@@ -15,7 +15,7 @@ export class ServerPortal {
     return <PortalManager portals={this.portals}>{children}</PortalManager>;
   }
 
-  appendUniversalPortals(html: string) {
+  appendUniversalPortals(html: string, interpolate = (children: any) => children) {
     if (!this.portals.length) {
       return html;
     }
@@ -23,7 +23,7 @@ export class ServerPortal {
     const $ = load(html);
     this.portals.forEach(([children, selector]) => {
       try {
-        const markup = ReactDOMServer.renderToStaticMarkup(children);
+        const markup = ReactDOMServer.renderToStaticMarkup(interpolate(children));
         $(markup).attr("data-react-universal-portal", "").appendTo((selector as any))
       } catch (error) {
         console.warn('Unable to render portal server-side:\n' + error.message || error.toString().split('\n')[0]);
