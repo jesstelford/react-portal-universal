@@ -70,6 +70,9 @@ const template = fs.readFileSync(path.resolve("build/index.html"), "utf8");
 const html     = template.replace("<div id=\"root\"></div>", `<div id="root">${body}</div>`);
 const markup   = portals.appendUniversalPortals(html);
 
+// if you have third party content like styled-components you can run following instead
+const markup   = portals.appendUniversalPortals(html, (children) => sheet.collectStyles(children));
+
 res.status(200).send(markup);
 ```
 

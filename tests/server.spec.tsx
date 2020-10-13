@@ -47,5 +47,23 @@ describe("server-side", () => {
       expect(withStaticMarkup.includes("<h1>Привет, мир!</h1>"));
       expect(withStaticMarkup).toMatchSnapshot();
     });
+
+    it("should render interpolated dom", () => {
+      const html = `
+        <html>
+          <head>
+            <meta charset="utf-8" />
+          </head>
+          <body>
+            <div id="root"></div>
+          </body>
+        </html>
+      `;
+      createUniversalPortal(<h1>Hallo, Welt!</h1>, "body");
+      const withStaticMarkup = appendUniversalPortals(html, (children) => `<main>${children}</main>`);
+
+      expect(withStaticMarkup.includes("<main><h1>Hallo, Welt!</h1></main>"));
+      expect(withStaticMarkup).toMatchSnapshot();
+    });
   });
 });
