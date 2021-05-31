@@ -73,6 +73,19 @@ const markup   = portals.appendUniversalPortals(html);
 res.status(200).send(markup);
 ```
 
+### `appendUniversalPortals(html, options?: { enhancePortal? })`
+
+In some circumstances, a portal may need to be wrapped in a Higher Order
+Component, or a Context.Provider. This is possible with the `enhancePortal`
+option:
+
+```js
+const markup   = portals.appendUniversalPortals(html, { enhancePortal: portal
+=> (
+
+)});
+```
+
 ## Configure
 
 It is important to make sure that React application code is using the same instance of the library
